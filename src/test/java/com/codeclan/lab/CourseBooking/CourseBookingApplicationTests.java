@@ -2,6 +2,7 @@ package com.codeclan.lab.CourseBooking;
 
 import com.codeclan.lab.CourseBooking.models.Booking;
 import com.codeclan.lab.CourseBooking.models.Course;
+import com.codeclan.lab.CourseBooking.models.Customer;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,11 +17,13 @@ public class CourseBookingApplicationTests {
 
 	Course course;
 	Booking booking;
+	Customer customer;
 
 	@Before
 	public void setup() {
 		course = new Course("Python 1.0", "Aberdeen",4);
 		booking = new Booking("01-12-2019");
+		customer = new Customer("Bob", "Sydney", 22);
 	}
 
 	@Test
@@ -69,7 +72,17 @@ public class CourseBookingApplicationTests {
 	public void canSetDate() {
 		booking.setDate("01-22-2018");
 		assertEquals("01-22-2018", booking.getDate());
+	}
 
+	@Test
+	public void canGetCustName ()  {
+		assertEquals("Bob", customer.getCustName());
+	}
+
+	@Test
+	public void canSetCustName() {
+		customer.setCustName("Jane");
+		assertEquals("Jane", customer.getCustName());
 	}
 
 }

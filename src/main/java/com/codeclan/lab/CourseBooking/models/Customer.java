@@ -30,4 +30,13 @@ public class Customer {
     public void setCustTown(String custTown) {
         this.custTown = custTown;
     }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+
+    }
 }

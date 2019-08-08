@@ -96,4 +96,15 @@ public class CourseBookingApplicationTests {
 		assertEquals("Stonehaven", customer.getCustTown());
 	}
 
+	@Test
+	public void canGetAge ()  {
+		assertEquals(22, customer.getAge());
+	}
+
+	@Test
+	public void canSetAge() {
+		customer.setAge(19);
+		assertEquals(19, customer.getAge());
+	}
+
 }

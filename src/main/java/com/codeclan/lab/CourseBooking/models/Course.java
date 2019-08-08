@@ -13,7 +13,6 @@ public class Course {
         this.rating = rating;
     }
 
-
     public String getCourseName() {
         return this.courseName;
     }
@@ -34,10 +33,10 @@ public class Course {
         return this.rating;
     }
 
-
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 }
 
 

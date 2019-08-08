@@ -1,5 +1,6 @@
 package com.codeclan.lab.CourseBooking;
 
+import com.codeclan.lab.CourseBooking.models.Booking;
 import com.codeclan.lab.CourseBooking.models.Course;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,10 +15,12 @@ import static org.junit.Assert.assertEquals;
 public class CourseBookingApplicationTests {
 
 	Course course;
+	Booking booking;
 
 	@Before
 	public void setup() {
 		course = new Course("Python 1.0", "Aberdeen",4);
+		booking = new Booking("01-12-2019");
 	}
 
 	@Test
@@ -55,6 +58,18 @@ public class CourseBookingApplicationTests {
 	public void canSetRating() {
 		course.setRating(2);
 		assertEquals(2, course.getRating());
+	}
+
+	@Test
+	public void canGetDate() {
+		assertEquals("01-12-2019", booking.getDate());
+	}
+
+	@Test
+	public void canSetDate() {
+		booking.setDate("01-22-2018");
+		assertEquals("01-22-2018", booking.getDate());
+
 	}
 
 }

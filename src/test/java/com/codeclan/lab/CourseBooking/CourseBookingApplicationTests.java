@@ -112,7 +112,7 @@ public class CourseBookingApplicationTests {
 	}
 	@Test
 	public void createCustomer() {
-		customer = new Customer("Bob", "Sydney", 22);
+		customer = new Customer("Jim", "Sydney", 22);
 		customerRepository.save(customer);
 	}
 }

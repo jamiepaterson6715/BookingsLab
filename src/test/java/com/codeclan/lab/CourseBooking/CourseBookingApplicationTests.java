@@ -3,6 +3,8 @@ package com.codeclan.lab.CourseBooking;
 import com.codeclan.lab.CourseBooking.models.Booking;
 import com.codeclan.lab.CourseBooking.models.Course;
 import com.codeclan.lab.CourseBooking.models.Customer;
+import com.codeclan.lab.CourseBooking.repositories.BookingRepository;
+import com.codeclan.lab.CourseBooking.repositories.CourseRepository;
 import com.codeclan.lab.CourseBooking.repositories.CustomerRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,17 +18,26 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CourseBookingApplicationTests {
-@Autowired
+
+	@Autowired
 	CustomerRepository customerRepository;
+
+	@Autowired
+	CourseRepository courseRepository;
+
+	@Autowired
+	BookingRepository bookingRepository;
 
 	Course course;
 	Booking booking;
+	Course course1;
+	Booking booking1;
 	Customer customer;
 
 	@Before
 	public void setup() {
 		course = new Course("Python 1.0", "Aberdeen",4);
-		booking = new Booking("01-12-2019");
+		booking = new Booking("01-12-2019", course);
 		customer = new Customer("Bob", "Sydney", 22);
 	}
 
@@ -114,5 +125,15 @@ public class CourseBookingApplicationTests {
 	public void createCustomer() {
 		customer = new Customer("Jim", "Sydney", 22);
 		customerRepository.save(customer);
+	}
+
+	@Test
+	public void createBookingOnACourse() {
+		course1 = new Course("Python 1.0", "Aberdeen",4);
+		courseRepository.save(course1);
+
+//		booking1 = new Booking("01-12-2019", course1);
+//		bookingRepository.save(booking1);
+
 	}
 }

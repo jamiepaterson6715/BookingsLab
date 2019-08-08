@@ -1,6 +1,8 @@
 package com.codeclan.lab.CourseBooking.components;
 
 
+import com.codeclan.lab.CourseBooking.models.Booking;
+import com.codeclan.lab.CourseBooking.models.Course;
 import com.codeclan.lab.CourseBooking.models.Customer;
 import com.codeclan.lab.CourseBooking.repositories.BookingRepository;
 import com.codeclan.lab.CourseBooking.repositories.CourseRepository;
@@ -29,6 +31,14 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         Customer customer1 = new Customer("Jim", "Sydney", 22);
         customerRepository.save(customer1);
+
+        Course course1 = new Course("Python", "Edinburgh", 5);
+        courseRepository.save(course1);
+
+        Booking booking1 = new Booking("August 8 2019", course1);
+        bookingRepository.save(booking1);
     }
+
+
 
 }

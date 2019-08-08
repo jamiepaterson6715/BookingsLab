@@ -19,8 +19,15 @@ public class Customer {
         return this.custName;
     }
 
-
     public void setCustName(String custName) {
         this.custName = custName;
+    }
+
+    public String getCustTown() {
+        return this.custTown;
+    }
+
+    public void setCustTown(String custTown) {
+        this.custTown = custTown;
     }
 }

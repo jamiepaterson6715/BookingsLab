@@ -85,4 +85,15 @@ public class CourseBookingApplicationTests {
 		assertEquals("Jane", customer.getCustName());
 	}
 
+	@Test
+	public void canGetCustTown ()  {
+		assertEquals("Sydney", customer.getCustTown());
+	}
+
+	@Test
+	public void canSetCustTown() {
+		customer.setCustTown("Stonehaven");
+		assertEquals("Stonehaven", customer.getCustTown());
+	}
+
 }

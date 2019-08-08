@@ -33,8 +33,16 @@ public class CourseBookingApplicationTests {
 	public void canSetCourseName() {
 		course.setCourseName("Py-x 2");
 		assertEquals("Py-x 2", course.getCourseName());
-
 	}
 
+	@Test
+	public void canGetCourseTown() {
+		assertEquals("Aberdeen", course.getCourseTown());
+	}
 
+	@Test
+	public void canSetCourseTown() {
+		course.setCourseTown("Perth");
+		assertEquals("Perth", course.getCourseTown());
+	}
 }

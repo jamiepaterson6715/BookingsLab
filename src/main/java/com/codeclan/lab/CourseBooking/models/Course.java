@@ -21,4 +21,14 @@ public class Course {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
+    public String getCourseTown() {
+        return this.courseTown;
+    }
+
+    public void setCourseTown(String courseTown) {
+        this.courseTown = courseTown;
+    }
 }
+
+

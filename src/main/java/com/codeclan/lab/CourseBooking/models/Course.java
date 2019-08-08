@@ -29,6 +29,15 @@ public class Course {
     public void setCourseTown(String courseTown) {
         this.courseTown = courseTown;
     }
+
+    public int getRating() {
+        return this.rating;
+    }
+
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }
 
 

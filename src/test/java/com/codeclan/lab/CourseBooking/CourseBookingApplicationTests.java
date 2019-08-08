@@ -45,4 +45,16 @@ public class CourseBookingApplicationTests {
 		course.setCourseTown("Perth");
 		assertEquals("Perth", course.getCourseTown());
 	}
+
+	@Test
+	public void canGetRating() {
+		assertEquals(4, course.getRating());
+	}
+
+	@Test
+	public void canSetRating() {
+		course.setRating(2);
+		assertEquals(2, course.getRating());
+	}
+
 }

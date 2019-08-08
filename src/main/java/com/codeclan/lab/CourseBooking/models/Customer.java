@@ -1,7 +1,10 @@
 package com.codeclan.lab.CourseBooking.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,12 +25,16 @@ public class Customer {
     @Column(name = "age")
     private int age;
 
-//    private List<Booking>;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer")
+    private List<Booking> bookings;
 
     public Customer(String custName, String custTown, int age) {
         this.custName = custName;
         this.custTown = custTown;
         this.age = age;
+        this.bookings = new ArrayList<Booking>();
     }
 
     public Customer() {}

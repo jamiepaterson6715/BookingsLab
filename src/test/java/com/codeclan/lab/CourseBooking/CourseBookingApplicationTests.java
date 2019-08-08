@@ -33,12 +33,13 @@ public class CourseBookingApplicationTests {
 	Course course1;
 	Booking booking1;
 	Customer customer;
+	Customer customer1;
 
 	@Before
 	public void setup() {
 		course = new Course("Python 1.0", "Aberdeen",4);
-		booking = new Booking("01-12-2019", course);
 		customer = new Customer("Bob", "Sydney", 22);
+		booking = new Booking("01-12-2019", course, customer);
 	}
 
 	@Test
@@ -128,10 +129,11 @@ public class CourseBookingApplicationTests {
 	}
 
 	@Test
-	public void createBookingOnACourse() {
+	public void createBookingOnACourseWithACustomer() {
 		course1 = new Course("Python 1.0", "Aberdeen",4);
 		courseRepository.save(course1);
-
+		customer1 = new Customer("Bob", "Sydney", 22);
+		customerRepository.save(customer1);
 //		booking1 = new Booking("01-12-2019", course1);
 //		bookingRepository.save(booking1);
 

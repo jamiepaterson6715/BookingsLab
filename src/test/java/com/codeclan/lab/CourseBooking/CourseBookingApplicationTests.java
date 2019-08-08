@@ -3,9 +3,11 @@ package com.codeclan.lab.CourseBooking;
 import com.codeclan.lab.CourseBooking.models.Booking;
 import com.codeclan.lab.CourseBooking.models.Course;
 import com.codeclan.lab.CourseBooking.models.Customer;
+import com.codeclan.lab.CourseBooking.repositories.CustomerRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -14,6 +16,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CourseBookingApplicationTests {
+@Autowired
+	CustomerRepository customerRepository;
 
 	Course course;
 	Booking booking;
@@ -106,5 +110,9 @@ public class CourseBookingApplicationTests {
 		customer.setAge(19);
 		assertEquals(19, customer.getAge());
 	}
-
+	@Test
+	public void createCustomer() {
+		customer = new Customer("Bob", "Sydney", 22);
+		customerRepository.save(customer);
+	}
 }

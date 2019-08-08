@@ -1,9 +1,25 @@
 package com.codeclan.lab.CourseBooking.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="courses")
 public class Course {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "course_name")
     private String courseName;
+
+    @Column(name = "course_town")
     private String courseTown;
+
+    @Column(name = "rating")
     private int rating;
+
 //    private List<Bookinh>;
 
 
@@ -11,6 +27,16 @@ public class Course {
         this.courseName = courseName;
         this.courseTown = courseTown;
         this.rating = rating;
+    }
+
+    public Course() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCourseName() {
